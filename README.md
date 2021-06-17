@@ -95,7 +95,7 @@ local function createOptionHolder(holderTitle, parent, parentTable, subHolder)
 		BorderSizePixel = 0,
 		Text = holderTitle,
 		TextSize = subHolder and 16 or 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = parentTable.main
 	})
@@ -209,7 +209,7 @@ function createToggle(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -221,7 +221,7 @@ function createToggle(option, parent)
 		SizeConstraint = Enum.SizeConstraint.RelativeYY,
 		BackgroundTransparency = 1,
 		Image = "rbxassetid://3570695787",
-		ImageColor3 = option.state and Color3.fromRGB(255, 65, 65) or Color3.fromRGB(100, 100, 100),
+		ImageColor3 = option.state and Color3.fromRGB(85, 130, 255) or Color3.fromRGB(100, 100, 100),
 		ScaleType = Enum.ScaleType.Slice,
 		SliceCenter = Rect.new(100, 100, 100, 100),
 		SliceScale = 0.02,
@@ -233,7 +233,7 @@ function createToggle(option, parent)
 		Size = UDim2.new(1, -4, 1, -4),
 		BackgroundTransparency = 1,
 		Image = "rbxassetid://3570695787",
-		ImageColor3 = option.state and Color3.fromRGB(255, 65, 65) or Color3.fromRGB(20, 20, 20),
+		ImageColor3 = option.state and Color3.fromRGB(85, 130, 255) or Color3.fromRGB(20, 20, 20),
 		ScaleType = Enum.ScaleType.Slice,
 		SliceCenter = Rect.new(100, 100, 100, 100),
 		SliceScale = 0.02,
@@ -285,7 +285,7 @@ function createToggle(option, parent)
 		checkmarkHolder:TweenSize(option.state and UDim2.new(1, -8, 1, -8) or UDim2.new(0, 0, 1, -8), "Out", "Quad", 0.2, true)
 		tweenService:Create(tickboxInner, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = state and Color3.fromRGB(255, 65, 65) or Color3.fromRGB(20, 20, 20)}):Play()
 		if state then
-			tweenService:Create(tickboxOutline, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(255, 65, 65)}):Play()
+			tweenService:Create(tickboxOutline, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(85, 130, 255)}):Play()
 		else
 			if inContact then
 				tweenService:Create(tickboxOutline, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(140, 140, 140)}):Play()
@@ -315,7 +315,7 @@ function createButton(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = parent.content
 	})
@@ -378,7 +378,7 @@ local function createBind(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -386,7 +386,7 @@ local function createBind(option, parent)
 
 	local round = library:Create("ImageLabel", {
 		Position = UDim2.new(1, -6, 0, 4),
-		Size = UDim2.new(0, -textService:GetTextSize(text, 16, Enum.Font.Sarpanch, Vector2.new(9e9, 9e9)).X - 16, 1, -10),
+		Size = UDim2.new(0, -textService:GetTextSize(text, 16, Enum.Font.Gotham, Vector2.new(9e9, 9e9)).X - 16, 1, -10),
 		SizeConstraint = Enum.SizeConstraint.RelativeYY,
 		BackgroundTransparency = 1,
 		Image = "rbxassetid://3570695787",
@@ -402,7 +402,7 @@ local function createBind(option, parent)
 		BackgroundTransparency = 1,
 		Text = text,
 		TextSize = 16,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = round
 	})
@@ -507,7 +507,7 @@ local function createSlider(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -567,7 +567,7 @@ local function createSlider(option, parent)
 		TextColor3 = Color3.fromRGB(235, 235, 235),
 		TextSize = 15,
 		TextWrapped = true,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		Parent = valueRound
 	})
 
@@ -673,7 +673,7 @@ local function createList(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = option.text,
 		TextSize = 14,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(140, 140, 140),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -685,7 +685,7 @@ local function createList(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = option.value,
 		TextSize = 18,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -789,7 +789,7 @@ local function createList(option, parent, holder)
 			Text = "    " .. value,
 			TextSize = 14,
 			TextTransparency = self.open and 0 or 1,
-			Font = Enum.Font.Sarpanch,
+			Font = Enum.Font.Gotham,
 			TextColor3 = Color3.fromRGB(255, 255, 255),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			Parent = content
@@ -914,7 +914,7 @@ local function createBox(option, parent)
 		BackgroundTransparency = 1,
 		Text = option.text,
 		TextSize = 14,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(100, 100, 100),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -926,7 +926,7 @@ local function createBox(option, parent)
 		BackgroundTransparency = 1,
 		Text = option.value,
 		TextSize = 18,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		TextWrapped = true,
@@ -1159,7 +1159,7 @@ local function createColorPickerWindow(option)
 		BackgroundTransparency = 1,
 		Text = "Reset",
 		TextTransparency = 1,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Code,
 		TextSize = 15,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = option.resetColor
@@ -1201,7 +1201,7 @@ local function createColorPickerWindow(option)
 		BackgroundTransparency = 1,
 		Text = "Undo",
 		TextTransparency = 1,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Code,
 		TextSize = 15,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = option.undoColor
@@ -1246,7 +1246,7 @@ local function createColorPickerWindow(option)
 		BackgroundTransparency = 1,
 		Text = "Set",
 		TextTransparency = 1,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Code,
 		TextSize = 15,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = option.setColor
@@ -1288,7 +1288,7 @@ local function createColorPickerWindow(option)
 		BackgroundTransparency = 1,
 		Text = "Rainbow",
 		TextTransparency = 1,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Code,
 		TextSize = 15,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = option.rainbow
@@ -1329,7 +1329,7 @@ local function createColor(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.Sarpanch,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -1626,7 +1626,7 @@ function library:Init()
 		ZIndex = 100,
 		AnchorPoint = Vector2.new(0, 0),
 		Size = UDim2.new(0, 5, 0, 5),
-		BackgroundColor3 = Color3.fromRGB(0, 255, 187),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = self.base
 	})
 
